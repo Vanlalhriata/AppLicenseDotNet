@@ -71,7 +71,7 @@ namespace AppLicense
         private static bool isLicenseValid(LicenseData licenseData)
         {
             string actualMachineId = GetMachineId();
-            var isValid = CryptoUtils.VerifyData(licenseData.MachineId, licenseData.Signature);
+            var isValid = CryptoUtils.VerifyData(actualMachineId, licenseData.Signature);
 
             return isValid;
         }
